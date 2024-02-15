@@ -9,3 +9,7 @@ export const signinFormValidation = object({
   email: string().email("Email is Invalid").required("Email is Required"),
   password: string().min(8, "Password must be at least 8 character").max(20, "Password must be lower 20 character").required("Password is Required"),
 })
+export const CatagoryValidation = object({
+  catagory : string().required("Skill is Required"),
+  
+})

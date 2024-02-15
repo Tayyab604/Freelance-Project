@@ -1,15 +1,60 @@
 import './App.css'
-import {RouterProvider} from "react-router-dom";
-import { router } from './RoutingPages/Routepages';
+import {RouterProvider, createBrowserRouter} from "react-router-dom";
+import Signup from './Auth/Pages/Signup';
+import Signin from './Auth/Pages/Signin';
+import TermsOfUse from './Rule/TermsOfUse';
+import PrivacyPolicy from './Rule/PrivacyPolicy';
+import SelectRole from './Auth/SelectRole';
+import SelectCatagory from './Auth/SelectCatagory';
+import Welcome from './Auth/Welcome';
+import Home from './Main/Home';
 function App() {
-  
+  const router = createBrowserRouter([
+    {
+      path: "/signup",
+      element: <Signup/> 
+    },
+    {
+      path: "/login",
+      element: <Signin/> ,
+    },
+    {
+      path: "/signup/termofuse",
+      element: <TermsOfUse/> ,
+    },
+    {
+      path: "/signup/privacypolicy",
+      element: <PrivacyPolicy/> ,
+    },
+    {
+      path: "/login/termofuse",
+      element: <TermsOfUse/> ,
+    },
+    {
+      path: "/login/privacypolicy",
+      element: <PrivacyPolicy/> ,
+    },
+    {
+      path: "/selectrole",
+      element: <SelectRole/> ,
+    },
+    {
+      path: "/selectcatagory",
+      element: <SelectCatagory/> ,
+    },
+    {
+      path: "/welcome",
+      element: <Welcome/> ,
+    },
+    {
+      path: "/home",
+      element: <Home/> ,
+    }
+  ]);
   return (
-
     <>
      <RouterProvider router={router} />
     </>
-
-
   )
 }
 
