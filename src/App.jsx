@@ -8,6 +8,7 @@ import SelectRole from './Auth/SelectRole';
 import SelectCatagory from './Auth/SelectCatagory';
 import Welcome from './Auth/Welcome';
 import Home from './Main/Home';
+import Jobs from './Main/Jobs';
 function App() {
   const router = createBrowserRouter([
     {
@@ -49,7 +50,13 @@ function App() {
     {
       path: "/home",
       element: <Home/> ,
-    }
+    },
+    {
+      path: "/jobs",
+      element: <Jobs/> ,
+    },
+    
+  
   ]);
   return (
     <>

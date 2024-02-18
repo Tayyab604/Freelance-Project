@@ -1,14 +1,13 @@
 import React from 'react'
 import HeaderLayout from './Components/HeaderLayout'
 
-
-const Home = () => {
+const Jobs = () => {
   return (
     <div>
-      <HeaderLayout/>
-      home
+    <HeaderLayout/>
+      job
     </div>
   )
 }
 
-export default Home
+export default Jobs
