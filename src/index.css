@@ -1,3 +1,18 @@
-body{
+#input::-webkit-slider-thumb{
+   appearance: none;
+   margin-top: -12px; 
+   background:#570880;
+   height: 30px;
+   width: 30px;  
+   border-radius: 100px;
+   
+}
+#input::-webkit-slider-runnable-track{
+    height: 5px;
+  background: #570880;
+
   
+}
+#input{
+    border: none;
 }
