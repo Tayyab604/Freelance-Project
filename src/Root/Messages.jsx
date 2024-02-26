@@ -4,22 +4,22 @@ import styled from 'styled-components'
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Text } from '@chakra-ui/react'
 import { NavLink } from 'react-router-dom'
 
-const Profile = () => {
+const Messages = () => {
   return (
     // <Container>
-    <>
-    <HeaderLayout/>
+<>
+<HeaderLayout/>
     <Breadcrumb pl="50px" pt="120px" >
         <BreadcrumbItem>
-        <NavLink to="/profile" > <BreadcrumbLink fontSize="20px" color="#570880" fontWeight="bold" >Profile</BreadcrumbLink> </NavLink>
+        <NavLink to="/messages" > <BreadcrumbLink fontSize="20px" color="#812eaa" fontWeight="bold" >Messages</BreadcrumbLink> </NavLink>
         </BreadcrumbItem>
       </Breadcrumb>
-    </>
+</>
   // </Container>
   )
 }
 
-export default Profile
+export default Messages
 // const Container = styled.div`
 
 //     margin: 0;

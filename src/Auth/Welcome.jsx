@@ -10,7 +10,7 @@ function Welcome() {
     <Container>
       <Stack justifyContent="center" alignItems="center" h="100vh" >
         <Dabba>
-       <Link to="/home" >
+       <Link to="/dashboard" >
        <Button  _hover={{
                       backgroundColor: "#69268a"
                     }} w="270px" h="64px" fontSize="22px" borderRadius="32px" backgroundColor="#570880" color="white"  >Welcome to</Button></Link>

@@ -1,99 +1,132 @@
 
-import { Box, Button, Flex, Stack, Text } from '@chakra-ui/react';
+import { Box, Flex, Icon, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { CgProfile } from "react-icons/cg";
+import { RiMessage2Fill } from "react-icons/ri";
+import { IoIosNotifications } from "react-icons/io";
+import { MdOutlinePayment } from "react-icons/md";
+import { IoMdSettings } from "react-icons/io";
+import { IoIosLogOut } from "react-icons/io";
+import { FaBookmark } from "react-icons/fa";
+
+
 const HeaderLayout = () => {
   return (
 
-    <Box position="fixed" top="0" zIndex="1" w="100%">
-      
+    <Container position="fixed" top="0" zIndex="1" w="100%">
+
       <Dabba>
 
         <Flex justifyContent="space-between" pl="50px" alignItems="center" h="100%" >
-          <Flex gap="350px" alignItems="center">
+          <Flex gap="50px" alignItems="center">
             <Box>
               <img width="127px" height="86px" src="./Images/Logo.png" alt="" />
             </Box>
-            <Flex gap="120px"  >
-              <NavLink to="/home" style={({ isActive }) => {
-                return isActive ? {
-                  
-                  background: "linear-gradient(180deg,#F082DA, white)",
-                  padding : "0px 10px 0px 10px",
-                  borderRadius : "10px"
-                } : {};
-              }}
+            <Flex gap="50px"  >
+              <NavLink to="/dashboard"
+
               >
-                <li>Home</li>
+                <Box _hover={{
+                  color: "#F082DA"
+                }} fontSize="25px" fontWeight="bold" color="#812eaa" cursor="pointer"  >Dashboard</Box>
               </NavLink>
-              <NavLink to="/jobs" style={({ isActive }) => {
-                return isActive ? {
-                  background: "linear-gradient(180deg,#F082DA, white)",
-                  padding : "0px 10px 0px 10px",
-                  borderRadius : "10px"
-                } :{} ;
-              }}
+              <NavLink to="/jobs"
               >
-                <li>Jobs</li>
+
+                <Box _hover={{
+                  color: "#F082DA"
+                }} fontSize="25px" fontWeight="bold" color="#812eaa" cursor="pointer"  >Jobs</Box>
               </NavLink>
-              <NavLink to="/profile" style={({ isActive }) => {
-                return isActive ? {
-                  background: "linear-gradient(180deg,#F082DA, white)",
-                  padding : "0px 10px 0px 10px",
-                  borderRadius : "10px"
-                } : {};
-              }}
+              <NavLink to="/proposal"
               >
-                <li>Profile</li>
+
+                <Box _hover={{
+                  color: "#F082DA"
+                }} fontSize="25px" fontWeight="bold" color="#812eaa" cursor="pointer"  >Proposal</Box>
               </NavLink>
-              <NavLink to="/setting" style={({ isActive }) => {
-                return isActive ? {
-                  background: "linear-gradient(180deg,#F082DA, white)",
-                  padding : "0px 10px 0px 10px",
-                  borderRadius : "10px"
-                } : {};
-              }}
+              <NavLink to="/report"
               >
-                <li>Setting</li>
+
+                <Box _hover={{
+                  color: "#F082DA"
+                }} fontSize="25px" fontWeight="bold" color="#812eaa" cursor="pointer"  >Report</Box>
               </NavLink>
             </Flex>
+          </Flex>
+          <Flex mr="30px" alignItems="center" gap="20px" >
+          <Link to="/saveproject" >
+                <Icon _hover={{
+              fontSize: "30px"
+            }} color="#812eaa" fontSize="25px" as={FaBookmark} /></Link>
+                <Link to="/notification" >
+                <Icon _hover={{
+              fontSize: "35px"
+            }} color="#812eaa" fontSize="30px" as={IoIosNotifications} /></Link>
+            <Link to="/messages">
+            <Icon _hover={{
+              fontSize: "35px"
+            }} color="#812eaa" fontSize="30px" as={RiMessage2Fill} /></Link>
+            <Menu >
+              <MenuButton  >
+                <Icon color="#812eaa" fontSize="50px" as={CgProfile} />
+              </MenuButton>
+              <MenuList background="linear-gradient(90deg,#F082DA, white)" >
+                <Link to="/profile" >
+                <MenuItem _hover={{
+                  background: "white"
+                }} fontWeight="bold" color="#812eaa" fontSize="20px" background="linear-gradient(90deg,#F082DA, white)"  > <Icon color="#812eaa" fontSize="30px" as={CgProfile} mr="5px" />  Profile</MenuItem>
+                </Link>
+<Link to="/payment" >
+<MenuItem _hover={{
+                  background: "white"
+                }} fontWeight="bold" color="#812eaa" background="linear-gradient(90deg,#F082DA, white)" fontSize="20px" > <Icon color="#812eaa" fontSize="30px" as={MdOutlinePayment} mr="5px" /> Payment</MenuItem>
+</Link>
+                <Link to="/setting" >
+                <MenuItem _hover={{
+                  background: "white"
+                }} fontWeight="bold" color="#812eaa" background="linear-gradient(90deg,#F082DA, white)" fontSize="20px" > <Icon color="#812eaa" fontSize="30px" as={IoMdSettings} mr="5px" /> Setting</MenuItem>
+                </Link>
+                <MenuItem _hover={{
+                  background: "white"
+                }} fontWeight="bold" color="#812eaa" background="linear-gradient(90deg,#F082DA, white)" fontSize="20px" > <Icon color="#812eaa" fontSize="30px" as={IoIosLogOut} mr="5px" /> Logout</MenuItem>
+
+              </MenuList>
+            </Menu>
           </Flex>
         </Flex>
 
       </Dabba>
-    </Box>
+    </Container>
 
   )
 }
 
 export default HeaderLayout
 const Dabba = styled.div`
-box-shadow: 0 0 10px black;
+box-shadow: 0 0px 5px #812eaa; 
 width: 100%;
-height: 120px;
+height: 100px;
 background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
 backdrop-filter: blur(10px);
 -webkit-backdrop-filter: blur(10px);
 border:1px solid rgba(255, 255, 255, 0.18);
 border-end-end-radius: 15px;
 border-end-start-radius : 15px;
-li{
-list-style-type: none;
-font-size: 30px;
-font-weight: bold;
-color: #570880;
-cursor: pointer;
-}
 font-family: "Poppins", sans-serif;
 
 `
-const Border =styled.div`
- border-image: linear-gradient(90deg,#019BD7, black) ;
-    border-top: 5px;
-    border-style: solid;
-    border-image-slice: 1;
-    width: 1250px;
-    height: 700px;
+const Container = styled.div`
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5 ;
+   background-image: url("./Images/bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-end-end-radius: 15px;
+border-end-start-radius : 15px;
 `
 
 

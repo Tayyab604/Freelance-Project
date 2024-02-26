@@ -22,9 +22,9 @@ console.log(isseleect)
               <select onChange={(e)=>setisseleect(e.target.value)}  className='select-box' name="categories" id="categories">
                 <option >Select</option>
                 <option className='option' value="GraphicsDesign">Graphics & Designer</option>
-                <option value="ProgrammingTech">Programming & Techg</option>
+                <option value="ProgrammingTech">Programming & Tech</option>
                 <option value="DigitalMarketing">Digital Marketing</option>
-                <option value="VideoAnimation">Video & Animationr</option>
+                <option value="VideoAnimation">Video & Animation</option>
                 <option value="WritingTranslation">Writing & Translation</option>
                 <option value="Data">Data</option>
                 <option value="OT">AI Services</option>

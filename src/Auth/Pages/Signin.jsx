@@ -27,7 +27,7 @@ const Signin = () => {
           onSubmit={(values) => {
             console.log(values)
             if (values) {
-              navigate("/selectrole")
+              navigate("/home")
             }
           }}
           validationSchema={signinFormValidation}
@@ -64,9 +64,11 @@ const Signin = () => {
                   <Text color="#333333" >By creating an account, you agree to our <br /><Link to="termofuse" ><Box as={"span"} fontWeight="bold" cursor="pointer" color="#570880" >Terms of use</Box></Link> and <Link to="privacypolicy">
                     <Box as={"span"} cursor="pointer" fontWeight="bold" color="#570880" >Privacy Policy</Box></Link>  </Text>
                   <Stack>
+                    
                     <Button type="submit" _hover={{
                       backgroundColor: "#69268a"
                     }} w="270px" h="64px" fontSize="22px" borderRadius="32px" backgroundColor="#570880" color="white"  >Login</Button>
+                    
                   </Stack>
                   <Text>Create your account ?<Link to="/signup" ><Box as={"span"} fontWeight="bold" color="#570880" cursor="pointer" >signup  </Box></Link>  </Text>
                 </Stack>

@@ -1,17 +1,18 @@
 import React from 'react'
-import HeaderLayout from './Components/HeaderLayout'
+
 import styled from 'styled-components'
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Text } from '@chakra-ui/react'
 import { NavLink } from 'react-router-dom'
+import HeaderLayout from './Components/HeaderLayout'
 
-const Profile = () => {
+const SavedProject = () => {
   return (
     // <Container>
     <>
     <HeaderLayout/>
     <Breadcrumb pl="50px" pt="120px" >
         <BreadcrumbItem>
-        <NavLink to="/profile" > <BreadcrumbLink fontSize="20px" color="#570880" fontWeight="bold" >Profile</BreadcrumbLink> </NavLink>
+        <NavLink to="/saveproject" > <BreadcrumbLink fontSize="20px" color="#812eaa" fontWeight="bold" >Savedproject</BreadcrumbLink> </NavLink>
         </BreadcrumbItem>
       </Breadcrumb>
     </>
@@ -19,7 +20,7 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default SavedProject
 // const Container = styled.div`
 
 //     margin: 0;

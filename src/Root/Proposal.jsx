@@ -4,14 +4,14 @@ import styled from 'styled-components'
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Text } from '@chakra-ui/react'
 import { NavLink } from 'react-router-dom'
 
-const Profile = () => {
+const Proposal = () => {
   return (
     // <Container>
     <>
     <HeaderLayout/>
     <Breadcrumb pl="50px" pt="120px" >
         <BreadcrumbItem>
-        <NavLink to="/profile" > <BreadcrumbLink fontSize="20px" color="#570880" fontWeight="bold" >Profile</BreadcrumbLink> </NavLink>
+        <NavLink to="/proposal" > <BreadcrumbLink fontSize="20px" color="#812eaa" fontWeight="bold" >Proposal</BreadcrumbLink> </NavLink>
         </BreadcrumbItem>
       </Breadcrumb>
     </>
@@ -19,7 +19,7 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default Proposal
 // const Container = styled.div`
 
 //     margin: 0;
