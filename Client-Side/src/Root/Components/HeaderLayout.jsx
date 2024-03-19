@@ -9,9 +9,11 @@ import { MdOutlinePayment } from "react-icons/md";
 import { IoMdSettings } from "react-icons/io";
 import { IoIosLogOut } from "react-icons/io";
 import { FaBookmark } from "react-icons/fa";
+import useAuth from '../../hooks/useAuth';
 
 
 const HeaderLayout = () => {
+  const {logout}=useAuth()
   return (
 
     <Container position="fixed" top="0" zIndex="1" w="100%">
@@ -20,51 +22,61 @@ const HeaderLayout = () => {
 
         <Flex justifyContent="space-between" pl="50px" alignItems="center" h="100%" >
           <Flex gap="50px" alignItems="center">
+            <Link to="/dashboard" cursor="pointer" >
             <Box>
               <img width="127px" height="86px" src="./Images/Logo.png" alt="" />
             </Box>
+            </Link>
             <Flex gap="50px"  >
               <NavLink to="/dashboard"
 
+
               >
                 <Box _hover={{
-                  color: "#F082DA"
-                }} fontSize="25px" fontWeight="bold" color="#812eaa" cursor="pointer"  >Dashboard</Box>
+                  color: "#F082DA",
+                  transition: "0.3s ease-out",
+                }} fontSize="25px"  transition="0.3s ease-out" fontWeight="bold" color="#812eaa" cursor="pointer"  >Dashboard</Box>
               </NavLink>
               <NavLink to="/jobs"
               >
 
                 <Box _hover={{
-                  color: "#F082DA"
-                }} fontSize="25px" fontWeight="bold" color="#812eaa" cursor="pointer"  >Jobs</Box>
+                  color: "#F082DA",
+                  transition: "0.3s ease-out"
+                }} fontSize="25px" transition="0.3s ease-out"  fontWeight="bold" color="#812eaa" cursor="pointer"  >Jobs</Box>
               </NavLink>
               <NavLink to="/proposal"
               >
 
                 <Box _hover={{
-                  color: "#F082DA"
-                }} fontSize="25px" fontWeight="bold" color="#812eaa" cursor="pointer"  >Proposal</Box>
+                  color: "#F082DA",
+                  transition: "0.3s ease-out"
+                }} fontSize="25px" transition="0.3s ease-out" fontWeight="bold" color="#812eaa" cursor="pointer"  >Proposal</Box>
               </NavLink>
               <NavLink to="/report"
               >
 
                 <Box _hover={{
-                  color: "#F082DA"
-                }} fontSize="25px" fontWeight="bold" color="#812eaa" cursor="pointer"  >Report</Box>
+                  color: "#F082DA",
+                  transition: "0.3s ease-out"
+                }} fontSize="25px" transition="0.3s ease-out" fontWeight="bold" color="#812eaa" cursor="pointer"  >Report</Box>
               </NavLink>
             </Flex>
           </Flex>
           <Flex mr="30px" alignItems="center" gap="20px" >
           <Link to="/saveproject" >
                 <Icon _hover={{
+                  transition:"0.3s ease-out",
               fontSize: "30px"
-            }} color="#812eaa" fontSize="25px" as={FaBookmark} /></Link>
+            }} transition="0.3s ease-out"  color="#812eaa" fontSize="25px" as={FaBookmark} /></Link>
                 <Link to="/notification" >
                 <Icon _hover={{
-              fontSize: "35px"
-            }} color="#812eaa" fontSize="30px" as={IoIosNotifications} /></Link>
+              fontSize: "35px",
+              transition:"0.3s ease-out"
+            }} transition="0.3s ease-out" color="#812eaa" fontSize="30px" as={IoIosNotifications} /></Link>
             <Link to="/messages">
-            <Icon _hover={{
+            <Icon transition="0.3s ease-out" _hover={{
+              transition:"0.3s ease-out",
               fontSize: "35px"
             }} color="#812eaa" fontSize="30px" as={RiMessage2Fill} /></Link>
             <Menu >
@@ -87,7 +99,7 @@ const HeaderLayout = () => {
                   background: "white"
                 }} fontWeight="bold" color="#812eaa" background="linear-gradient(90deg,#F082DA, white)" fontSize="20px" > <Icon color="#812eaa" fontSize="30px" as={IoMdSettings} mr="5px" /> Setting</MenuItem>
                 </Link>
-                <MenuItem _hover={{
+                <MenuItem onClick={logout}  _hover={{
                   background: "white"
                 }} fontWeight="bold" color="#812eaa" background="linear-gradient(90deg,#F082DA, white)" fontSize="20px" > <Icon color="#812eaa" fontSize="30px" as={IoIosLogOut} mr="5px" /> Logout</MenuItem>
 

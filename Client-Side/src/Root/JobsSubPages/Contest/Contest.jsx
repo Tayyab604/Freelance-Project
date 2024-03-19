@@ -101,14 +101,14 @@ const Contest = () => {
                         }
                     </Stack>
                     <Text mt="20px" ml="40px" fontWeight="bold" color="#812eaa" fontSize="30px" >Minimum Bids</Text>
-                    <Flex color="#812eaa" mt="20px" ml="40px" justifyContent="center" alignItems="center" fontWeight="bold" borderRadius="10px" w="278px" h="52px" boxShadow="0 0 10px #812eaa" >Bids
+                    <Flex color="#812eaa" mt="20px" ml="40px" justifyContent="center" alignItems="center" fontWeight="bold" borderRadius="10px" w="278px" h="52px" boxShadow="0 0  10px #F082DA" background="linear-gradient(90deg,#F082DA, #F5B484)" >Bids
                     </Flex>
 
                     <Text mt="20px" ml="40px" fontWeight="bold" color="#812eaa" fontSize="30px" >Client Reviews</Text>
 
                 </Dabba2>
                 <Stack>
-                    <InputGroup px="20px" background="white" alignItems="center" w="1000px" h="50px" boxShadow="0 0 5px #812eaa" borderRadius="15px"  >
+                    <InputGroup px="20px" background="white" alignItems="center" w="1000px" h="50px" boxShadow="0 0 2px #812eaa" borderRadius="15px"  >
                         <Input variant="unstyled" h="50px" color="#812eaa" fontSize="20px" placeholder="Search"   ></Input>
                         <Icon color="#812eaa"  as={CiSearch} fontSize="30px" />
                     </InputGroup>

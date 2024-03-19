@@ -44,11 +44,25 @@ const ContestDetails = () => {
           <Flex gap="20px" mt="30px" justifyContent="space-between"  >
                         <NavLink to="/contestproposal" 
                         >
-                            <Flex justifyContent="center" alignItems="center" color="#812eaa" fontWeight="bold" borderRadius="10px" w="278px" h="52px" boxShadow="0 0  10px #F082DA"  >Send Context Proposal</Flex>
+                            <Flex _hover={{
+                              transition: "0.3s ease-out",
+                              boxShadow:"0px 0px 50px #F082DA",
+                              width:"283px",
+                               height:"57px"
+                               
+
+                            }} background="linear-gradient(90deg,#F082DA, #F5B484)"  transition="0.3s ease-out"  boxShadow="0 0  10px #F082DA" justifyContent="center" alignItems="center" color="#812eaa" fontWeight="bold" borderRadius="10px" w="278px" h="52px"   >Send Context Proposal</Flex>
                         </NavLink>
                         <NavLink to="/saveproject" 
                         >
-                            <Flex boxShadow="0 0  10px #F082DA" justifyContent="center" alignItems="center" color="#812eaa" fontWeight="bold" borderRadius="10px" w="278px" h="52px"  >Save Job
+                            <Flex _hover={{
+                              transition: "0.3s ease-out",
+                              boxShadow:"0px 0px 50px #F082DA",
+                              width:"283px",
+                               height:"57px"
+                               
+
+                            }}  background="linear-gradient(90deg,#F082DA, #F5B484)" transition="0.3s ease-out"  boxShadow="0 0  10px #F082DA" justifyContent="center" alignItems="center" color="#812eaa" fontWeight="bold" borderRadius="10px" w="278px" h="52px"  >Save Job
                             </Flex>
                         </NavLink>
         </Flex>

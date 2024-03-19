@@ -43,11 +43,25 @@ const ProjectDetails = () => {
           <Flex gap="20px" mt="30px" justifyContent="space-between"  >
                         <NavLink to="/proposalsend" 
                         >
-                            <Flex justifyContent="center" alignItems="center" color="#812eaa" fontWeight="bold" borderRadius="10px" w="278px" h="52px" boxShadow="0 0  10px #F082DA"  >Send propopsal</Flex>
+                            <Flex  _hover={{
+                              transition: "0.3s ease-out",
+                              boxShadow:"0px 0px 50px #F082DA",
+                              width:"283px",
+                               height:"57px"
+                               
+
+                            }} justifyContent="center" transition="0.3s ease-out" alignItems="center" color="#812eaa" fontWeight="bold" borderRadius="10px" w="278px" h="52px" boxShadow="0 0  10px #F082DA" background="linear-gradient(90deg,#F082DA, #F5B484)"  >Send propopsal</Flex>
                         </NavLink>
                         <NavLink to="/saveproject" 
                         >
-                            <Flex boxShadow="0 0  10px #F082DA" justifyContent="center" alignItems="center" color="#812eaa" fontWeight="bold" borderRadius="10px" w="278px" h="52px"  >Save Job
+                            <Flex _hover={{
+                              transition: "0.3s ease-out",
+                              boxShadow:"0px 0px 50px #F082DA",
+                              width:"283px",
+                               height:"57px"
+                               
+
+                            }} transition="0.3s ease-out"  boxShadow="0 0  10px #F082DA" justifyContent="center" alignItems="center" color="#812eaa" fontWeight="bold" borderRadius="10px" w="278px" h="52px" background="linear-gradient(90deg,#F082DA, #F5B484)"  >Save Job
                             </Flex>
                         </NavLink>
         </Flex>

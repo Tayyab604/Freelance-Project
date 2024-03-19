@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import HeaderLayout from './Components/HeaderLayout'
 import styled from 'styled-components'
 import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Flex, Icon, Image, Input, Stack, Tab, TabList, Tabs, Text } from '@chakra-ui/react'
 import { CgProfile } from "react-icons/cg";
 import { NavLink } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 
 
 const Dashboard = () => {
+  useEffect(()=>{
+    document.title = "Canfree | Dashboard"
+  },[])
+  const { user,token,username,userId,role, } = useAuth()
   return (
       <>
       <HeaderLayout />
@@ -22,8 +27,8 @@ const Dashboard = () => {
           <Stack w="800px" h="920px" borderRadius="10px" >
             <Flex alignItems="center" >
               <Text fontSize="30px" fontWeight="bold" color="#812eaa"  >Welcome To Canfree,</Text>
-              <Flex borderRadius="10px" justifyContent="center" alignItems="center" fontWeight="bold" fontSize="30px" w="50px" h="50px" background="linear-gradient(180deg,#F082DA, #F5B484)" >
-                <Text color="white" >Ali</Text>
+              <Flex borderRadius="10px" justifyContent="center" alignItems="center" fontWeight="bold" fontSize="30px" px="10px" background="linear-gradient(180deg,#F082DA, #F5B484)" >
+                <Text color="white" >{username}</Text>
               </Flex>
             </Flex>
             < Tabs justifyContent="start" w="250px" px="20px" py="5px" mt="20px" ml="30px" borderRadius="10px" background="linear-gradient(180deg,#F082DA, #F5B484)" variant='soft-rounded'>

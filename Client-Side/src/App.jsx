@@ -26,119 +26,135 @@ import ProposalSend from './Root/JobsSubPages/Projects/ProposalSend';
 import SavedProject from './Root/SavedProject';
 import ContestProposal from './Root/JobsSubPages/Contest/ContestProposal';
 import Entries from './Root/JobsSubPages/Contest/Entries';
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
+import React from 'react';
+import RegisterEmailVerify from './Auth/RegisterEmailVerify';
+import ForgetPassword from './Auth/Pages/ForgetPassword';
+import NewPassword from './Auth/Pages/NewPassword';
+import ProtectRoute from './Auth/ProtectedRoute/ProtectRoute';
+import AlreadySigninProtectRoute from './Auth/ProtectedRoute/AlreadySigninProtectRoute';
+import BuyerDashboard from './Root/BuyerRoot/BuyerDashboard';
 function App() {
+  const queryClient= new QueryClient()
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <PublicPage />
+      element: <AlreadySigninProtectRoute><PublicPage/></AlreadySigninProtectRoute>
     },
     {
       path: "/signup",
-      element: <Signup />
+      element: <AlreadySigninProtectRoute><Signup /></AlreadySigninProtectRoute>   
+    },
+    {
+      path: "/forgetpassword",
+      element: <AlreadySigninProtectRoute><ForgetPassword /></AlreadySigninProtectRoute>  
+    },
+    {
+      path: "/newpassword/:token",
+      element: <AlreadySigninProtectRoute><NewPassword /></AlreadySigninProtectRoute>
+    },
+    {
+      path: "/register-email-verify/:email",
+      element: <AlreadySigninProtectRoute><RegisterEmailVerify /></AlreadySigninProtectRoute> 
     },
     {
       path: "/login",
-      element: <Signin />,
+      element:  <AlreadySigninProtectRoute><Signin /></AlreadySigninProtectRoute>,
     },
     {
       path: "/signup/termofuse",
-      element: <TermsOfUse />,
+      element: <AlreadySigninProtectRoute><TermsOfUse /></AlreadySigninProtectRoute>,
     },
     {
       path: "/signup/privacypolicy",
-      element: <PrivacyPolicy />,
+      element: <AlreadySigninProtectRoute><PrivacyPolicy /></AlreadySigninProtectRoute>,
     },
     {
       path: "/login/termofuse",
-      element: <TermsOfUse />,
+      element: <AlreadySigninProtectRoute><TermsOfUse /></AlreadySigninProtectRoute>,
     },
     {
       path: "/login/privacypolicy",
-      element: <PrivacyPolicy />,
+      element: <AlreadySigninProtectRoute><PrivacyPolicy /></AlreadySigninProtectRoute>,
     },
     {
-      path: "/selectrole",
-      element: <SelectRole />,
-    },
-    {
-      path: "/selectcatagory",
-      element: <SelectCatagory />,
-    },
-    {
-      path: "/welcome",
-      element: <Welcome />,
+      path: "/welcome/:token",
+      element: <AlreadySigninProtectRoute><Welcome/></AlreadySigninProtectRoute>,
     },
     {
       path: "/dashboard",
-      element: <Dashboard />,
+      element: <ProtectRoute><Dashboard /></ProtectRoute>,
+    },
+    {
+      path: "/buyerdashboard",
+      element: <BuyerDashboard />,
     },
     {
       path: "/jobs",
-      element: <Jobs />,
+      element: <ProtectRoute><Jobs /></ProtectRoute>,
     },
     {
       path: "/proposal",
-      element: <Proposal />,
+      element: <ProtectRoute><Proposal /></ProtectRoute>,
     },
     {
       path: "/report",
-      element: <Reports />,
+      element: <ProtectRoute><Reports /></ProtectRoute>,
     },
     {
       path: "/saveproject",
-      element: <SavedProject />,
+      element: <ProtectRoute><SavedProject /></ProtectRoute>,
     },
     {
       path: "/notification",
-      element: <Notification />,
+      element: <ProtectRoute><Notification /></ProtectRoute>,
     },
     {
       path: "/messages",
-      element: <Messages />,
+      element: <ProtectRoute><Messages /></ProtectRoute>,
     },
     {
       path: "/profile",
-      element: <Profile />,
+      element: <ProtectRoute><Profile /></ProtectRoute>,
     },
     {
       path: "/payment",
-      element: <Payment />,
+      element: <ProtectRoute><Payment /></ProtectRoute>,
     },
     {
       path: "/setting",
-      element: <Setting />,
+      element: <ProtectRoute><Setting /></ProtectRoute>,
     },
-    // ---------------- Start job Sub Sections -----------------
-    // ---------------- End job Sub Sections -----------------
     {
       path: "/project",
-      element: <Projects />,
+      element: <ProtectRoute><Projects /></ProtectRoute>,
     },
     {
       path: "/projectdetails",
-      element: <ProjectDetails />,
+      element: <ProtectRoute><ProjectDetails /></ProtectRoute>,
     },
     {
       path: "/proposalsend",
-      element: <ProposalSend />,
+      element: <ProtectRoute><ProposalSend /></ProtectRoute>,
     },
     {
       path: "/contest",
-      element: <Contest />,
+      element: <ProtectRoute><Contest /></ProtectRoute>,
     },
     {
       path: "/contestdetails",
-      element: <ContestDetails />,
+      element: <ProtectRoute><ContestDetails /></ProtectRoute>,
     },
    
    
     {
       path: "/contestproposal",
-      element: <ContestProposal />,
+      element: <ProtectRoute><ContestProposal /></ProtectRoute>,
     },
     {
       path: "/entries",
-      element: <Entries />,
+      element:<ProtectRoute><Entries /></ProtectRoute> ,
     },
 
 
@@ -146,7 +162,10 @@ function App() {
   ]);
   return (
     <>
+    <QueryClientProvider client={queryClient} >
       <RouterProvider router={router} />
+      <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
     </>
   )
 }

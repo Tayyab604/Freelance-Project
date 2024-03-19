@@ -2,9 +2,12 @@ import { Box, Stack, Text } from '@chakra-ui/react'
 import React from 'react'
 
 import { styled } from 'styled-components'
-
+import { useEffect } from 'react';
 
 const TermsOfUse = () => {
+  useEffect(()=>{
+    document.title = "Canfree | Terms of use"
+  },[])
   return (
     <Container>
 

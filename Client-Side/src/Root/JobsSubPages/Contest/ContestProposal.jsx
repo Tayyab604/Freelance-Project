@@ -81,7 +81,14 @@ const ContestProposal = () => {
                         <Flex gap="20px" mt="30px"w="100%" justifyContent="center"  >
                             <NavLink to="/entries"
                             >
-                                <Flex justifyContent="center" alignItems="center" color="#812eaa" fontWeight="bold" borderRadius="10px" w="278px" h="52px" boxShadow="0 0  10px #F082DA"  >Send propopsal</Flex>
+                                <Flex  _hover={{
+                              transition: "0.3s ease-out",
+                              boxShadow:"0px 0px 50px #F082DA",
+                              width:"283px",
+                               height:"57px"
+                               
+
+                            }} background="linear-gradient(90deg,#F082DA, #F5B484)" transition="0.3s ease-out"  boxShadow="0 0  10px #F082DA" justifyContent="center" alignItems="center" color="#812eaa" fontWeight="bold" borderRadius="10px" w="278px" h="52px"  >Send propopsal</Flex>
                             </NavLink>
 
                         </Flex>

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 #input::-webkit-slider-thumb{
    appearance: none;
    margin-top: -12px; 
