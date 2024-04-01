@@ -2,7 +2,6 @@ import { Box, Button, Flex, FormControl, FormErrorMessage, FormLabel, Image, Inp
 import { Field, Form, Formik } from 'formik'
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import styled from 'styled-components'
 import { signinFormValidation } from '../Validation/Validationj'
 import { SigninUser } from '../../Api/query/userQuery'
 import { useMutation } from 'react-query'
@@ -16,33 +15,33 @@ const Signin = () => {
     document.title = "Canfree | Login"
   },[])
   const navigate = useNavigate()
-  const {  login , setloginUserData  } = useAuth()
+  const {  login   } = useAuth()
   const toast = useToast()
   const { mutate, isLoading } = useMutation({
     mutationKey: 'signin',
     mutationFn: SigninUser,
     onSuccess: (data) => {
-      const {username,email,userId,token,role} = data
-      if(role=="seller"){
-        if(token||role){
-          login(username,email,userId,token,role)
-          // setloginUserData(data)
+      const user = data
+      // if(role=="seller"){
+        if(user.token){
+          login(user)
           navigate(`/dashboard`) 
           toast({
             title: "Successfully Login",
             status: "success"
           })
-        }
-      }else if(role=="buyer"){
-        if(token||role){
-          login(token,role)
-          navigate(`/buyerdashboard`) 
-          toast({
-            title: "Successfully Login",
-            status: "success"
-          })
-        }
+        // }
       }
+      // else if(role=="buyer"){
+      //   if(token||role){
+      //     login(token,role)
+      //     navigate(`/buyerdashboard`) 
+      //     toast({
+      //       title: "Successfully Login",
+      //       status: "success"
+      //     })
+      //   }
+      // }
         
     },
     onError: (error,data) => {

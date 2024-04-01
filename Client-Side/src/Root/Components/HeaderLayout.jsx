@@ -24,7 +24,7 @@ const HeaderLayout = () => {
           <Flex gap="50px" alignItems="center">
             <Link to="/dashboard" cursor="pointer" >
             <Box>
-              <img width="127px" height="86px" src="./Images/Logo.png" alt="" />
+              <img width="97px" height="56px" src="./Images/Logo.png" alt="" />
             </Box>
             </Link>
             <Flex gap="50px"  >
@@ -35,7 +35,7 @@ const HeaderLayout = () => {
                 <Box _hover={{
                   color: "#F082DA",
                   transition: "0.3s ease-out",
-                }} fontSize="25px"  transition="0.3s ease-out" fontWeight="bold" color="#812eaa" cursor="pointer"  >Dashboard</Box>
+                }} fontSize="20px"  transition="0.3s ease-out" fontWeight="bold" color="#812eaa" cursor="pointer"  >Dashboard</Box>
               </NavLink>
               <NavLink to="/jobs"
               >
@@ -43,7 +43,7 @@ const HeaderLayout = () => {
                 <Box _hover={{
                   color: "#F082DA",
                   transition: "0.3s ease-out"
-                }} fontSize="25px" transition="0.3s ease-out"  fontWeight="bold" color="#812eaa" cursor="pointer"  >Jobs</Box>
+                }} fontSize="20px" transition="0.3s ease-out"  fontWeight="bold" color="#812eaa" cursor="pointer"  >Jobs</Box>
               </NavLink>
               <NavLink to="/proposal"
               >
@@ -51,7 +51,7 @@ const HeaderLayout = () => {
                 <Box _hover={{
                   color: "#F082DA",
                   transition: "0.3s ease-out"
-                }} fontSize="25px" transition="0.3s ease-out" fontWeight="bold" color="#812eaa" cursor="pointer"  >Proposal</Box>
+                }} fontSize="20px" transition="0.3s ease-out" fontWeight="bold" color="#812eaa" cursor="pointer"  >Proposal</Box>
               </NavLink>
               <NavLink to="/report"
               >
@@ -59,7 +59,7 @@ const HeaderLayout = () => {
                 <Box _hover={{
                   color: "#F082DA",
                   transition: "0.3s ease-out"
-                }} fontSize="25px" transition="0.3s ease-out" fontWeight="bold" color="#812eaa" cursor="pointer"  >Report</Box>
+                }} fontSize="20px" transition="0.3s ease-out" fontWeight="bold" color="#812eaa" cursor="pointer"  >Report</Box>
               </NavLink>
             </Flex>
           </Flex>
@@ -81,13 +81,13 @@ const HeaderLayout = () => {
             }} color="#812eaa" fontSize="30px" as={RiMessage2Fill} /></Link>
             <Menu >
               <MenuButton  >
-                <Icon color="#812eaa" fontSize="50px" as={CgProfile} />
+                <img  width="50px" height="50px" src="./Images/profilepic.png" alt="" />
               </MenuButton>
               <MenuList background="linear-gradient(90deg,#F082DA, white)" >
                 <Link to="/profile" >
                 <MenuItem _hover={{
                   background: "white"
-                }} fontWeight="bold" color="#812eaa" fontSize="20px" background="linear-gradient(90deg,#F082DA, white)"  > <Icon color="#812eaa" fontSize="30px" as={CgProfile} mr="5px" />  Profile</MenuItem>
+                }} fontWeight="bold" color="#812eaa" fontSize="20px" background="linear-gradient(90deg,#F082DA, white)"  > <Flex gap="10px"  ><img  width="30px" height="30px"src="./Images/profilepic.png" alt="" />  Profile</Flex></MenuItem>
                 </Link>
 <Link to="/payment" >
 <MenuItem _hover={{
@@ -118,7 +118,7 @@ export default HeaderLayout
 const Dabba = styled.div`
 box-shadow: 0 0px 5px #812eaa; 
 width: 100%;
-height: 100px;
+height: 80px;
 background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
 backdrop-filter: blur(10px);
 -webkit-backdrop-filter: blur(10px);

@@ -2,6 +2,14 @@ import Axios from '../axios'
 
 const API_USERS = "/api/users"
 
+export const GetUserById = async (id)=>{
+    try {
+        const {data} = await Axios.get(`${API_USERS}/getuserbyid/${id}`)
+        return data
+    } catch (error) {
+        throw new Error(error.response.data.message)
+    }
+}
 export const SignUpUser = async ({username,email,password,role})=>{
     
         try {

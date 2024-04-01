@@ -2,21 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-#input::-webkit-slider-thumb{
-   appearance: none;
-   margin-top: -12px; 
-   background:#812eaa;
-   height: 30px;
-   width: 30px;  
-   border-radius: 100px;
-   
-}
-#input::-webkit-slider-runnable-track{
-    height: 5px;
-  background: #812eaa;
 
-  
+
+
+
+
+.chat-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  overflow: scroll;
+  overflow-x: hidden;
 }
-#input{
-    border: none;
+.chat-body::-webkit-scrollbar {
+  width: 5px; 
+  height:5px ;  
 }
+.chat-body::-webkit-scrollbar-track  {
+  background: #efacf6; 
+}
+.chat-body::-webkit-scrollbar-thumb  {
+  background-color: #F082DA;    
+  border-radius: 20px;
+}
+
+.message {
+
+background: #F082DA;
+color: #812eaa;
+padding: 0.7rem;
+border-radius: 1rem 1rem 1rem 0;
+max-width: 28rem;
+width: fit-content;
+display: flex;
+flex-direction: column;
+gap: 0.5rem;
+}
+
+.message>span:nth-child(2){
+  font-size: 0.7rem;
+  align-self: end;
+}
+
+.own {
+align-self: flex-end;
+border-radius: 1rem 1rem 0 1rem;
+background: #efacf6;
+}
+
+
+

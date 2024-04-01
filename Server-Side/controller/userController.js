@@ -4,6 +4,24 @@ const bcrypt = require('bcrypt')
 const nodemailer = require("nodemailer")
 const jwt = require('jsonwebtoken')
 
+// @des Get User By Id
+//
+const GetUserById = asyncHandler(async (req,res) => {
+    const { id } = req.params
+    if (!id) {
+        res.status(400)
+        throw new Error("All Feild Are Required")
+    }
+    const user = await User.findById(id)
+    res.status(200).json({
+        UserById : user
+      
+    })
+  
+
+    
+})
+
 // @des Verify the User
 //  not a route its function  
 const SendVerficationMail = asyncHandler(async (email) => {
@@ -267,6 +285,7 @@ module.exports = {
     Signin,
     WelcomeUserVerified,
     ForgetPassword,
-    UpdateForgetPassword
+    UpdateForgetPassword,
+    GetUserById
 
 }

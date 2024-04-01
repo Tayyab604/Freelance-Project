@@ -18,8 +18,7 @@ const AddMessage = asyncHandler(async (req, res) => {
     })
     const result =  await message.save()
       res.json({
-        result : result ,
-        message : "AddMessage"
+        result 
       })
 
 })
@@ -29,7 +28,7 @@ const AddMessage = asyncHandler(async (req, res) => {
 // @access private 
 const GetMessages = asyncHandler(async (req, res) => {
     const {chatId} =req.params
-    const result = await MessageModel.findOne({chatId})
+    const result = await MessageModel.find({chatId})
     res.json({
         result : result,
         message : "GetMessages"

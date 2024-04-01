@@ -1,7 +1,9 @@
 const express = require('express');
-const { Signup, Signin ,resendmail, WelcomeUserVerified, ForgetPassword, UpdateForgetPassword } = require('../controller/userController');
+const { Signup, Signin ,resendmail, WelcomeUserVerified, ForgetPassword, UpdateForgetPassword, GetUserById } = require('../controller/userController');
 const route = express.Router();
 
+
+route.get('/getuserbyid/:id',GetUserById)
 route.post('/signup',Signup)
 route.post('/resendmail',resendmail)
 route.post('/signin',Signin)

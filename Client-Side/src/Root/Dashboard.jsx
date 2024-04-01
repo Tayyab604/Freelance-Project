@@ -11,7 +11,7 @@ const Dashboard = () => {
   useEffect(()=>{
     document.title = "Canfree | Dashboard"
   },[])
-  const { user,token,username,userId,role, } = useAuth()
+  const { user } = useAuth()
   return (
       <>
       <HeaderLayout />
@@ -28,7 +28,7 @@ const Dashboard = () => {
             <Flex alignItems="center" >
               <Text fontSize="30px" fontWeight="bold" color="#812eaa"  >Welcome To Canfree,</Text>
               <Flex borderRadius="10px" justifyContent="center" alignItems="center" fontWeight="bold" fontSize="30px" px="10px" background="linear-gradient(180deg,#F082DA, #F5B484)" >
-                <Text color="white" >{username}</Text>
+                <Text color="white" >{user.username}</Text>
               </Flex>
             </Flex>
             < Tabs justifyContent="start" w="250px" px="20px" py="5px" mt="20px" ml="30px" borderRadius="10px" background="linear-gradient(180deg,#F082DA, #F5B484)" variant='soft-rounded'>
@@ -67,16 +67,16 @@ const Dashboard = () => {
         <Dabba2>
           <Stack mt="70px" color="#812eaa" gap="30px" >
             <Stack alignItems="center" >
-              <Icon fontSize="100px" as={CgProfile} />
-              <Text fontSize="30px" fontWeight="bold" >Ali Tayyab</Text>
+            <img  width="80px" height="80px" src="./Images/profilepic.png" alt="" />
+              <Text fontSize="30px" fontWeight="bold" >{user.username}</Text>
               <Text fontSize="30px" fontWeight="bold" >Web Developer</Text>
             </Stack>
+            
+            <Stack gap="60px" >
             <Flex justifyContent="space-between" px="20px" fontSize="20px" fontWeight="bold" >
               <Text >Profile Completion</Text>
               <Text  >100%</Text>
             </Flex>
-            <Input id='input' type='range' />
-            <Stack gap="60px" >
               <Flex justifyContent="space-between" px="20px" fontSize="20px" fontWeight="bold" >
                 <Text>Total Earning</Text>
                 <Text>$ 2500</Text>
