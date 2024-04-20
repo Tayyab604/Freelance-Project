@@ -1,6 +1,6 @@
 import Axios from '../axios'
 
-const API_CHATS = "/api/chat"
+const API_CHATS = "/api/chat" 
 
 export const UserChats = async (userId)=>{
     
