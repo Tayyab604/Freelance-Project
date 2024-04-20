@@ -20,8 +20,6 @@ export const SignUpUser = async ({username,email,password,role})=>{
         }
 }
 export const SigninUser = async ({email,password})=>{
-   
-    
     try {
         const {data} = await Axios.post(`${API_USERS}/signin`, {email, password})
         return data

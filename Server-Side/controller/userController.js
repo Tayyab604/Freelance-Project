@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken')
 
 // @des Get User By Id
 //
-const GetUserById = asyncHandler(async (req,res) => {
+const GetUserById = asyncHandler(async (req, res) => {
     const { id } = req.params
     if (!id) {
         res.status(400)
@@ -14,12 +14,12 @@ const GetUserById = asyncHandler(async (req,res) => {
     }
     const user = await User.findById(id)
     res.status(200).json({
-        UserById : user
-      
-    })
-  
+        UserById: user
 
-    
+    })
+
+
+
 })
 
 // @des Verify the User
@@ -82,15 +82,34 @@ const Signup = asyncHandler(async (req, res) => {
     const hashPassword = await bcrypt.hash(password, 10)
     const isVerfied = "0";
     const verifytoken = "No";
-    const forgetpasswordtoken = "No"
+    const forgetpasswordtoken = "No";
+    const firstname = "No";
+    // const lastname = ""
+    // const sex = ""
+    // const dob = ""
+    // const city = ""
+    // const address = ""
+    // const professionaltitle = ""
+    // const primaryskill = ""
+    // const aboutyourself = ""
     const user = await User.create({
         username,
         email,
         password: hashPassword,
         role,
-        verifytoken,
         isVerfied,
-        forgetpasswordtoken
+        verifytoken,
+        forgetpasswordtoken,
+        firstname
+        // firstname,
+        // lastname,
+        // sex,
+        // dob,
+        // city,
+        // address,
+        // professionaltitle,
+        // primaryskill,
+        // aboutyourself
 
     })
     if (user) {
@@ -100,7 +119,16 @@ const Signup = asyncHandler(async (req, res) => {
             email: user.email,
             token: user.verifytoken,
             role: user.role,
-            isVerfied: user.isVerfied
+            isVerfied: user.isVerfied,
+            // firstname: firstname,
+            // lastname: lastname,
+            // sex: sex,
+            // dob: dob,
+            // city: city,
+            // address: address,
+            // professionaltitle: professionaltitle,
+            // primaryskill: primaryskill,
+            // aboutyourself: aboutyourself
         });
         SendVerficationMail(user.email)
     } else {
@@ -145,7 +173,7 @@ const WelcomeUserVerified = asyncHandler(async (req, res) => {
 
     const updateUser = await user.updateOne({ isVerfied: "1" })
     res.json({
-        "Message":`Successfully Verfied the User${user.email}`
+        "Message": `Successfully Verfied the User${user.email}`
     })
 
 })
@@ -207,12 +235,12 @@ const ForgetPassword = asyncHandler(async (req, res) => {
 // route post /api/users/ updateforgetpassword 
 // @access public 
 const UpdateForgetPassword = asyncHandler(async (req, res) => {
-    const { token , newpassword} = req.body
+    const { token, newpassword } = req.body
     if (!token) {
         res.status(401)
         throw new Error("Toke is required")
     }
-    if(!newpassword){
+    if (!newpassword) {
         res.status(401)
         throw new Error("New password is required")
     }
@@ -250,31 +278,31 @@ const Signin = asyncHandler(async (req, res) => {
     if (email == userAvailable.email && (await bcrypt.compare(password, userAvailable.password))) {
         const token = jwt.sign(
             {
-              username: userAvailable.username,
-              email: userAvailable.email,
-              userId: userAvailable.id,
+                username: userAvailable.username,
+                email: userAvailable.email,
+                userId: userAvailable.id,
             },
             process.env.TOKEN_KEY,
             {
-              expiresIn: "7d",
+                expiresIn: "7d",
             }
-          );
-      
-          res.cookie("jwt", token);
-      
-          res.json({ 
+        );
+
+        res.cookie("jwt", token);
+
+        res.json({
             username: userAvailable.username,
             email: userAvailable.email,
             userId: userAvailable.id,
-            token:token,
-            role:userAvailable.role,
-            message: "Signin SuccessFully" ,
-             });
+            token: token,
+            role: userAvailable.role,
+            message: "Signin SuccessFully",
+        });
     } else {
         res.status(400)
         throw new Error("Your Credentials are invalid")
     }
-    
+
 })
 
 

@@ -49,15 +49,15 @@ function App() {
     },
     {
       path: "/newpassword/:token",
-      element: <AlreadySigninProtectRoute><NewPassword /></AlreadySigninProtectRoute>
+      element: <AlreadySigninProtectRoute><NewPassword/></AlreadySigninProtectRoute>
     },
     {
       path: "/register-email-verify/:email",
-      element: <AlreadySigninProtectRoute><RegisterEmailVerify /></AlreadySigninProtectRoute> 
+      element: <AlreadySigninProtectRoute><RegisterEmailVerify/></AlreadySigninProtectRoute> 
     },
     {
       path: "/login",
-      element:  <AlreadySigninProtectRoute><Signin /></AlreadySigninProtectRoute>,
+      element:  <AlreadySigninProtectRoute><Signin/></AlreadySigninProtectRoute>,
     },
     {
       path: "/signup/termofuse",
