@@ -37,21 +37,35 @@ const ForgetPassword=()=> {
   return (
     
       <Stack background="linear-gradient(180deg,#F082DA, #F5B484)" h="100vh" >
-        <Link to="/login" ><Icon  ml="30px" mt="20px"  cursor="pointer" as={IoCaretBackCircle} color="#570880" fontSize="60px"   /></Link>
-       <Stack justifyContent="center" alignItems="center" >
-       <Box borderRadius="15px"  flexDir="column"  display="flex" justifyContent="center"   w={{
-          lg : "500px",
-          xl : "500px",
-          base : "350px"
-        }} h={{
-          lg : "350px",
-          xl : "350px",
-          base : "324px"
-        }} background="linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4))" backdropFilter="blur(10px)"  > 
-       <Stack gap="10px" p="30px"  alignItems="center" >
-       <Icon    as={GiPadlockOpen} color="#570880" fontSize="60px"   />
-       <Text fontWeight="bold" fontSize="30px" color="#570880" >Forget Password</Text>
-       <Text textAlign="center" color="#570880" >Enter your email .We have send  you  an email for <br /> forget your password</Text>
+        <Link to="/login" ><Icon  ml="30px" mt="20px"  cursor="pointer" as={IoCaretBackCircle} color="#570880" fontSize="60px" justifyContent="flex-start"  /></Link>
+       
+       <Stack gap="10px" alignItems="center"  background="linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4))" backdropFilter="blur(10px)" borderRadius='15px' mt='50px'
+       p={{
+        base: "10px",
+        sm: "30px",
+        md: "30px",
+       }}
+       mx={{
+        sm: '12px',
+        md: '165px',
+        lg: '280px',
+        xl: '420px',
+       }}
+       >
+        
+       <Icon    as={GiPadlockOpen} color="#570880" 
+       fontSize={{
+        base: "50px",
+        md: "60px",
+       }}
+       />
+       <Text fontWeight="bold"  color="#570880" 
+       fontSize={{
+        base: '20px',
+        md: "30px",
+       }}
+       >Forget Password</Text>
+       <Text textAlign="center" color="#570880" >Enter your email. We have send  you  an email to <br /> Reset your password</Text>
        <Formik
           initialValues={{
             email: "",
@@ -67,11 +81,20 @@ const ForgetPassword=()=> {
              
               <Form>
                
-                  <Stack gap="20px" justifyContent="center" alignItems="center" >
+                  <Stack gap={{
+                    base: "12px",
+                    md: "20px",
+                  }} justifyContent="center" alignItems="center" >
                   <Field name='email' >
                     {({ field, meta }) =>
                       <FormControl isInvalid={!!(meta.error)} >
-                        <Input  _placeholder={{ color : "#69268a"  }} placeholder='Email' borderRadius="12px" border="1px solid#69268a" type='email' w="373px" {...field} name='email' />
+                        <Input  _placeholder={{ color : "#69268a"  }} placeholder='Email' borderRadius="12px" border="1px solid#69268a" type='email' {...field} name='email' 
+                        w={{
+                          base: "250px",
+                          md: "373px",
+                          lg: "373px",
+                        }}
+                        />
                         <FormErrorMessage>{meta.error}</FormErrorMessage>
                       </FormControl>
                     }
@@ -95,8 +118,7 @@ const ForgetPassword=()=> {
         </Formik>
         
        </Stack>
-        </Box>
-       </Stack>
+      
       </Stack>
   
   )

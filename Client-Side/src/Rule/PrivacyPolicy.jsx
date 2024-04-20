@@ -1,23 +1,59 @@
-import { Box, Stack, Text } from '@chakra-ui/react'
+import { Box, Icon, Stack, Text } from '@chakra-ui/react'
 import React from 'react'
 
 import { styled } from 'styled-components'
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { IoCaretBackCircle } from 'react-icons/io5';
 
-const PrivacyPolicy = () => {
+const PrivacyPolicy = ({sheeda}) => {
   useEffect(()=>{
     document.title = "Canfree | Privacy Policy"
   },[])
   return (
     <Container>
     
-        <Dabba>
+        <Box
+        m={{
+          base: "20px",
+          md: "50px",
+        }} w={{
+          base: "45vh",
+          sm: "65vh",
+          md: "100vh",
+          lg: "130vh",
+          xl: "170vh",
+        }}
+        
+         borderRadius='15px' border='1px' bgGradient='linear(to-b, #ffffff66, #ffffff66)' borderColor='#ffffff2e' backdropBlur='10px' backdropFilter='10px'>
           <Box color="#570880"  >
-       <Stack gap="30px" px="50px" >
-       <Text fontSize="50px"  fontWeight="bold" >
+          <Link to="/login" ><Icon  
+          ml={{
+          base: '10px',
+          md: '15px',
+          lg: '45px',
+        }} mt="20px"  cursor="pointer" as={IoCaretBackCircle} color="#570880" fontSize="60px"   /></Link>
+       <Stack gap="30px" 
+       p={{
+        base: "20px",
+        md: "20px",
+        lg: "50px",
+        xl: "50px",
+      }}>
+       <Text fontSize={{
+              base: "35px",
+              md: "45px",
+              lg: "50px",
+              xl: "50px",
+            }}  fontWeight="bold" >
          Privacy Policy
          </Text>
-         <Text fontSize="30px"  fontWeight="bold" >
+         <Text fontSize={{
+              base: "20px",
+              md: "25px",
+              lg: "30px",
+              xl: "30px",
+            }}  fontWeight="bold" >
          Effective Date: February 20, 2024
          </Text>
          <Text fontSize="20px"  fontWeight="bold" >
@@ -126,7 +162,7 @@ const PrivacyPolicy = () => {
          If any provision of these Terms is held to be invalid or unenforceable, such provision will be struck and the remaining provisions will remain in full force and effect.
           </Text>
 
-          <Text fontSize="30px"  fontWeight="bold" >
+          <Text fontSize="30px"  fontWeight="bold"> 
           15. Amendment
          </Text>
          <Text fontSize="20px" fontWeight="bold" >
@@ -145,9 +181,7 @@ Canfree[Email Address]
 
     
           </Box>
-        
-
-        </Dabba>
+        </Box>
     
     </Container>
   )
@@ -168,16 +202,16 @@ const Container = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     `
-const Dabba = styled.div`
-    margin-top : 50px;
-    box-shadow: 0 0 10px black;
-    width: 1240px;
-    height: 3200px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border:1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 15px;
-    font-family: "Poppins", sans-serif;
+// const Dabba = styled.div`
+//     margin-top : 50px;
+//     box-shadow: 0 0 10px black;
+//     width: "100vh" ;
+//     height: 3200px;
+//     background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
+//     backdrop-filter: blur(10px);
+//     -webkit-backdrop-filter: blur(10px);
+//     border:1px solid rgba(255, 255, 255, 0.18);
+//     border-radius: 15px;
+//     font-family: "Poppins", sans-serif;
     
-    `
+//     `

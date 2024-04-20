@@ -10,7 +10,8 @@ import { useEffect } from 'react';
 
 
 
-const Signin = () => {
+const Signin = ({  }) => {
+    
   useEffect(()=>{
     document.title = "Canfree | Login"
   },[])
@@ -55,8 +56,12 @@ const Signin = () => {
       }
     }
   })
+  
+
+     
+  
   return (
-    <Flex w="100wh" h="100vh" >
+    <Flex w="100wh" h="100vh" sheeda = {true}>
       <Box justifyContent="center" display={{
         xl: "flex",
         lg: "flex",

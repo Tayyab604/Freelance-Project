@@ -41,32 +41,40 @@ function RegisterEmailVerify() {
   
   return (
     
-      <Stack background="linear-gradient(180deg,#F082DA, #F5B484)" justifyContent="center" alignItems="center" h="100vh" >
-        <Box borderRadius="15px" flexDir="column"  display="flex" justifyContent="center" alignItems="center" w={{
+      <Stack background="linear-gradient(180deg,#F082DA, #F5B484)" justifyContent="center" alignItems="center" h="100vh" 
+      w={{
+        base: "45wh",
+        // sm: "25wh",
+        md: "200wh",
+        lg: "220wh",
+      }}
+      >
+         
+       <Stack gap="10px"  alignItems="center" background="linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4))" backdropFilter="blur(10px)" borderRadius='15px'
+       w={{
+         base : "250px",
+         sm : "350px",
           lg : "500px",
           xl : "500px",
-          base : "350px"
-        }} h={{
-          lg : "350px",
-          xl : "350px",
-          base : "324px"
-        }} background="linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4))" backdropFilter="blur(10px)" web > 
-       <Stack gap="10px"  alignItems="center" >
-       <Icon as={MdEmail} color="#570880" fontSize="60px"   />
-       <Text fontWeight="bold" fontSize="30px" color="#570880" >Email Verification</Text>
-       <Text textAlign="center" color="#570880" >We have send you an email for verification on<strong> {email}</strong>.if <br /> you didn't receive it,click the button below.</Text>
+        }} p="20px">
+       <Icon as={MdEmail} color="#570880" fontSize={{
+        base: "40px",
+        md: "60px",
+       }}   />
+       <Text fontWeight="bold" color="#570880" fontSize={{
+        base: '15px',
+        md: '30px',
+       }}>Email Verification</Text>
+       <Text textAlign="center" color="#570880" >We have send you an email for verification on<strong> {email}</strong><br />if you didn't receive it, click the button below.</Text>
         <Button onClick={()=>mutate({
           email : email
-        })} isLoading={isLoading} type="submit"   _hover={{
-                              transition: "0.3s ease-out",
-                              boxShadow:"0px 0px 50px #69268a",
-                             
-                               
-
-                            }}  background="linear-gradient(180deg,#F082DA, #F5B484)" transition="0.3s ease-out" color="#69268a"  >Resend Mail
-                    </Button>
+        })} isLoading={isLoading} type="submit"   
+        _hover={{
+          transition: "0.3s ease-out",
+          boxShadow:"0px 0px 50px #69268a",
+          }}  background="linear-gradient(180deg,#F082DA, #F5B484)" transition="0.3s ease-out" color="#69268a"  >Resend Mail
+        </Button>
        </Stack>
-        </Box>
       </Stack>
   
   )

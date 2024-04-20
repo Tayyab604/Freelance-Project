@@ -8,7 +8,7 @@ import {SignUpUser} from '../../Api/query/userQuery'
 import "../../index.css"
 import { AuthContext } from '../../Provider/AuthProvider'
 
-const Signup = () => {
+const Signup = ({}) => {
   useEffect(()=>{
     document.title = "Canfree | Signup"
   },[])
@@ -29,10 +29,9 @@ const Signup = () => {
     }
   })
 
-
   return (
     <>
-    <Box display="none" >
+    <Box display="none" sheeda = {false}>
     </Box>
     <Flex w="100wh" h="100vh" >
       <Box justifyContent="center" display={{
@@ -52,7 +51,12 @@ const Signup = () => {
 
       </Box>
       <Box flexGrow="1" >
-        <Stack justifyContent="center" h="100%" alignItems="center">
+        <Stack justifyContent="center" 
+        p={{
+          base: '5px',
+          md: '15px ',
+          lg: '25px',
+        }} alignItems="center">
         <Box display={{
           xl: "none",
           lg: "none",
@@ -87,8 +91,16 @@ const Signup = () => {
           validationSchema={signupFormValidation}
         >
           <Stack justifyContent="center" h="100%" alignItems="center" >
-            <Stack gap="10px"  >
-              <Box>
+            <Stack gap={{
+              base: "0px",
+              md: "10px",
+            }}  >
+              <Box pt={{
+      base: '0px',
+      md: '0px',
+      lg: '25px',
+      xl: '25px',
+    }}>
                 <Text fontSize="40px" fontWeight="bold" >
                   Create an account
                 </Text>
