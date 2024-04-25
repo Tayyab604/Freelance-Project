@@ -152,9 +152,8 @@ function App() {
     {
       path: "/entries",
       element:<ProtectRoute><Entries /></ProtectRoute> ,
-    },
-
-
+    }
+    
 
   ]);
   return (
