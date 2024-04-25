@@ -152,9 +152,9 @@ const PublicPage = () => {
               lg: "30px",
               xl: "50px",
               }} > 
-              <Text display={{md:'none',lg:'none',xl:'block'}}>XL</Text>
+              {/* <Text display={{md:'none',lg:'none',xl:'block'}}>XL</Text>
               <Text display={{md:'none',lg:'block',xl:'none'}}>LG</Text>
-              <Text display={{md:'block',lg:'none',xl:'none'}}>MD</Text>
+              <Text display={{md:'block',lg:'none',xl:'none'}}>MD</Text> */}
               <NavLink to="/signup">
                 <Flex justifyContent="center" alignItems="center" color="#812eaa" fontWeight="bold" borderRadius="10px" w="148px" h="52px" boxShadow="5px 5px 10px #ffffff" background="linear-gradient(90deg,#F082DA, #F5B484)" >Signup
                 </Flex>
@@ -224,7 +224,6 @@ const PublicPage = () => {
       </Box>
 
       </Box>
-        {/* <MobilePublicPage/> */}
       
 <Stack gap="50px">
 

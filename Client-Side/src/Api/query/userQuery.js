@@ -30,7 +30,6 @@ export const SigninUser = async ({email,password})=>{
         throw new Error(error.response.data.message)
     }
 }
-
 export const VerifyUser = async ({token})=>{
     
     try {
