@@ -13,9 +13,8 @@ app.use(express.json())
 app.use("/api/users",require("./routes/userRoutes"))
 app.use("/api/chat",require("./routes/ChatRoutes"))
 app.use("/api/messages",require("./routes/MessageRoutes"))
+app.use("/api/profile",require("./routes/ProfileRoutes"))
 app.use(errorHandler)
-
-
 app.listen(port,()=>{
     console.log(`Server Start On this Port : ${port}`)
 })

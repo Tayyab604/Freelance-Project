@@ -91,7 +91,6 @@ const Signup = asyncHandler(async (req, res) => {
         verifytoken,
         isVerfied,
         forgetpasswordtoken
-
     })
     if (user) {
         res.status(201).json({
