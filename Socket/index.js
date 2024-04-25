@@ -4,7 +4,6 @@ const io = require('socket.io')(9900,{
     }
 })
 
-
 let activeUsers = []
 
 io.on('connection', (socket)=>{

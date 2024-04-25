@@ -7,7 +7,6 @@ const app =express()
 const port = process.env.PORT || 5000;
 DB()
 
-
 app.use(cors({origin : [process.env.FRONTEND_URL]}))
 app.use(express.json())
 app.use("/api/users",require("./routes/userRoutes"))
