@@ -32,6 +32,7 @@ import NewPassword from './Auth/Pages/NewPassword';
 import ProtectRoute from './Auth/ProtectedRoute/ProtectRoute';
 import AlreadySigninProtectRoute from './Auth/ProtectedRoute/AlreadySigninProtectRoute';
 import BuyerDashboard from './Root/BuyerRoot/BuyerDashboard';
+
 function App() {
   const queryClient= new QueryClient()
   const router = createBrowserRouter([
